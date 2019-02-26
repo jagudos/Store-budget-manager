@@ -1,0 +1,107 @@
+
+<div class="container side-collapse-container">
+	<div class="row">
+		<div
+			class="card card-2 card-search col-xs-12 col-md-10 col-md-offset-1">
+			<div class="row">
+				<div class="col-xs-10 col-md-11" id="inputMobile-panel">
+					<div class="row">
+						<h4>Gesti&oacute;n de usuarios</h4>
+					</div>
+					<form method="post" name="userForm">
+						<div class="row">
+							<div class="col-md-6">
+								<!-- <input type="text" id="userName" placeholder="nombre@dominio.xxx"
+									class="form-control form-field" ng-model="vm.user.username" ng-required="vm.currentUser.profile != '1'"/>-->
+								<input type="text" id="userName" placeholder="Usuario"
+									class="form-control form-field" ng-model="vm.user.username" ng-required=""/>									
+								<span ng-show="!userForm.$pristine && userForm.user.username.$error.required">Debes indicar un usuario</span>
+							</div>
+							<div class="col-xs-2 col-md-1">
+								<div class="form-group">
+									<button class="btn btn-primary" title="Buscar usuario" ng-click="vm.findUser()"
+										id="btnSearch" ng-disabled="!userForm.$valid"></button>
+								</div>
+							</div>
+							<div class="col-xs-6 col-md-1">
+								<div class="form-group">
+									 <button class="btn btn-primary" title="A&ntilde;adir un nuevo usuario" ng-click="vm.prepareInsert()"
+										id="btnPlus"></button> 
+								</div>
+							</div>
+							<div class="col-xs-6 col-md-1">
+								<div class="form-group">
+									<button class="btn btn-primary" title="A&ntilde;adir nuevo/Actualizar usuario" ng-click="vm.updateUser()" style="display: none;"
+										id="btnOk" ng-disabled="!userForm.$valid"></button>
+								</div>
+							</div>
+							<div class="col-xs-6 col-md-1">
+								<div class="form-group">
+									<button class="btn btn-primary" title="Regresar/Anular operaci&oacute;n" ng-click="vm.clearForm()" style="display: none;"
+										id="btnCancel"></button>
+								</div>
+							</div>
+						</div>
+						<hr>
+						<div class="row">
+							<div class="col-md-6">
+								<input type="text" id="firstName" placeholder="Nombre"
+									class="form-control form-field" ng-model="vm.user.firstName" ng-required="(vm.action == 1 || vm.action == 0) && vm.currentUser.profile != '1'"/>
+								<span ng-show="userForm.user.firstName.$error.required">El nombre es obligatorio</span>
+							</div>
+							<div class="col-md-6">
+								<input type="text" id="lastName" placeholder="Apellidos"
+									class="form-control form-field" ng-model="vm.user.lastName" />
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-6">
+								<input type="password" id="password" placeholder="Password"
+									class="form-control form-field" ng-model="vm.user.password" ng-disabled="vm.action == null" ng-required="(vm.action == 0) && vm.currentUser.profile != '1'"/>
+								<span ng-show="userForm.user.password.$error.required">El password es obligatorio</span>
+							</div>
+							<div class="col-md-6">
+							 <select id="agencia" class="form-control form-field"  ng-options="agencia as agencia for agencia in vm.agencias" ng-model="vm.user.agencia"></select>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-6">
+								<select id="perfiles" class="form-control form-field" data-ng-options="profile.id as profile.name for profile in vm.profiles" data-ng-model="vm.user.profile">
+									<option style="display:none" value="">Seleccione un perfil</option>
+								</select>
+									
+							</div>
+						</div>
+						<hr>
+						<div class="row">
+							<div class="col-md-6">
+							
+							</div>
+						</div>						
+						<div class="row">
+							<div class="col-md-12">
+								<div class="row user-row red">
+									<div class="col-xs-5 col-md-5">Nombre</div>
+									<div class="col-xs-4 col-md-5">Usuario</div>
+									<div class="col-xs-2 col-md-2">Baja</div>
+								</div>
+								<div class="row user-row grey" ng-repeat="x in vm.userList"
+									ng-class="{even: $even, odd: $odd}">
+									<div class="col-xs-5 col-md-5 name">{{x.firstName}}</div>
+									<div class="col-xs-4 col-md-5">
+										<a ng-href="#" ng-click="vm.prepareUpdate(x.username)">{{x.username}}</a>
+									</div>
+									<div class="col-xs-2 col-md-2">
+
+										<span class="btnDelete" ng-click="vm.deleteUser(x._id)"></span>
+									</div>
+
+								</div>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
