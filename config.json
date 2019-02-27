@@ -2,7 +2,7 @@
   "connectionString": "mongodb://127.0.0.1:27017/validador",
   "apiUrl": "http://localhost/api",
   "secret": "ESTO ES UN SECRETITO SI QUIERES QUE TE LO DIGA, DAME UN EURO",
-  "telefon": "listin_1549097757",
-  "identification": "identification_1549102388",
+  "telefon": "listin",
+  "identification": "identification",
   "collection": "test"
 }

@@ -55,6 +55,13 @@
                 controller: 'Logging.IndexController',
                 controllerAs: 'vm',
                 data: { activeTab: 'logging' , tittle: 'Gestión de trazas | Validador.es'}
+            })
+            .state('budget', {
+                url: '/budget',
+                templateUrl: 'budget/index.html',
+                controller: 'Budget.IndexController',
+                controllerAs: 'vm',
+                data: { activeTab: 'logging' , tittle: 'Presupuesto | Masmovil.tools'}
             });
         
         

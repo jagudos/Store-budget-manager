@@ -22,6 +22,9 @@
     <!-- Fonts styles -->
     <link href="https://fonts.googleapis.com/css?family=Lato:100,200,300,400" rel="stylesheet">
     <link href="../css/styles.css" rel="stylesheet">
+    
+    <!-- Para los date-picker -->   
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/angular-material/1.0.4/angular-material.css">
 
     <script>
         function openNav() {
@@ -75,6 +78,7 @@
           <a ui-sref="identification" ui-sref-opts="{reload: true}">Búsquedas NIF/NIE</a>
           <a id="userManagement" ui-sref="account" ui-sref-opts="{reload: true}">Gestión de usuarios</a>
           <a id="loggingManagement" ui-sref="logging" ui-sref-opts="{reload: true}">Gestión de trazas</a>
+          <a ui-sref="budget" ui-sref-opts="{reload: true}">Presupuesto</a>
           <a href="/login" target="_self">Logout</a>
         </div>        
         <!-- FIN Menu lateral -->          
@@ -107,9 +111,6 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular-aria.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-material/1.0.4/angular-material.js"></script>
     
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/angular-material/1.0.4/angular-material.css">
-    <!-- Para los date-picker -->    
-
     <!-- application scripts -->
     <script src="app.js"></script>
     <script src="app-services/user.service.js"></script>
@@ -117,10 +118,12 @@
     <script src="app-services/phonelist.service.js"></script>
     <script src="app-services/logger.service.js"></script>
     <script src="app-services/identification.service.js"></script>
+    <script src="app-services/budget.service.js"></script>
     <script src="home/index.controller.js"></script>
     <script src="account/index.controller.js"></script>
     <script src="logging/index.controller.js"></script>
     <script src="identification/index.controller.js"></script>
+    <script src="budget/index.controller.js"></script>
     <!-- <script src="account/select.js"></script> -->
 </body>
 </html>
