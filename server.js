@@ -34,6 +34,7 @@ app.use('/api/users', require('./controllers/api/users.controller'));
 app.use(express.static('public'));
 
 app.use(function (err, req, res, next) {
+	  console.log('error??')
 	  if (err.name === 'UnauthorizedError') {
 	    res.status(401).send('Sesión no valida, por favor vuelva a iniciar sesión');
 	  }
@@ -48,7 +49,7 @@ app.all('/*', function (req, res, next){
     console.log('Entra por https');
     return next();
   };
-  console.log('Entra en https');
+  console.log('Redirige a https//' + req.hostname + req.url);
   // handle port numbers if you need non defaults
   // res.redirect('https://' + req.host + req.url); // express 3.x
   res.redirect('https://' + req.hostname + req.url); // express 4.x
@@ -62,7 +63,8 @@ process.on('SIGINT', function () {
 //var server = app.listen(80, function () {
 //    console.log('Server listening at http://' + server.address().address + ':' + server.address().port);
 //});
-app.listen(82);
+app.listen(81);
 https.createServer(options, app).listen(444);
+console.log('empezamos')
 
 
